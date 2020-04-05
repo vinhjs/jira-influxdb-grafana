@@ -1,0 +1,27 @@
+{
+  "name": "jira-influxdb-grafana",
+  "version": "1.0.0",
+  "description": "The Grafana dashboard with agile metrics connected to Atlassian Jira.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinhjs/jira-influxdb-grafana.git"
+  },
+  "author": "vinhjs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinhjs/jira-influxdb-grafana/issues"
+  },
+  "homepage": "https://github.com/vinhjs/jira-influxdb-grafana#readme",
+  "dependencies": {
+    "async": "^3.2.0",
+    "config": "^3.3.1",
+    "influx": "^5.5.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "superagent": "^5.2.2"
+  }
+}

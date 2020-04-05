@@ -1,0 +1,16 @@
+{
+    "influxdb": {
+        "host": "localhost",
+        "port": 8086,
+        "database": "jira",
+        "pool": {
+            "maxRetries": 5,
+            "requestTimeout": 600000
+        }
+    },
+    "slack": {
+        "token": "",
+        "hook": "",
+        "cid": ""
+    }
+}
