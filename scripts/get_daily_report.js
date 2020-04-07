@@ -90,7 +90,7 @@ var preview = '';
         item = elements.shift();
         if (temp.fields.description && item.type === 'emoji' && (item.name === "rose" || item.name === "rocket" || item.name === "cactus")) {
             rs.push(temp);
-            temp = temp = {
+            temp = {
                 measurement: 'DailyReport',
                 fields: {
                     type: '',
