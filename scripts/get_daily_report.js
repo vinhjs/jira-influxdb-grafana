@@ -60,6 +60,7 @@ function parseResponse(body){
             series = _.union(series, getItem(timestamp, member, elements));
         }
     })
+    console.log(series);
     influxdb.writeMeasurement('DailyReport', series, { database: 'jira', precision: 'ms' }).then(result => {
         console.log("result :", result);
     }).catch(error => {
@@ -83,9 +84,8 @@ function getItem(timestamp, member, elements) {
             name: member.name,
             team: member.team
         },
-        timestamp: timestamp
+        timestamp: timestamp++
     }
-var preview = '';
     while(elements.length) {
         item = elements.shift();
         if (temp.fields.description && item.type === 'emoji' && (item.name === "rose" || item.name === "rocket" || item.name === "cactus")) {
@@ -104,7 +104,7 @@ var preview = '';
                     name: member.name,
                     team: member.team
                 },
-                timestamp: timestamp
+                timestamp: timestamp++
             }
         }
         if (item.type === 'emoji' && item.name === "rose") {
@@ -129,7 +129,6 @@ var preview = '';
         if (item.type === 'emoji' && (item.name === "done" || item.name === "white_check_mark" || item.name === "heavy_check_mark")) {
             temp.fields.status = "Done";
         }
-        preview = item;
     }
     if (temp.fields.description) {
         rs.push(temp);
