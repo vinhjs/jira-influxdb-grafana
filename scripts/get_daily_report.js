@@ -18,7 +18,7 @@ const influxdb = new influx.InfluxDB({
             measurement: 'DailyReport',
             fields: {
                 type: influx.FieldType.STRING,
-                status: influx.FieldType.INTEGER,
+                status: influx.FieldType.STRING,
                 description: influx.FieldType.STRING,
                 key: influx.FieldType.STRING,
                 url: influx.FieldType.STRING
@@ -44,6 +44,7 @@ function getDailyReport(TOKEN, CHANNEL_ID, THREAD_ID) {
         parseResponse(body);
     } else {
         console.log("NO RESPONSE");
+        console.log(body);
     }
   });
 }
