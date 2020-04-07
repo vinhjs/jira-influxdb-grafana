@@ -17,13 +17,13 @@ const influxdb = new influx.InfluxDB({
         {
             measurement: 'DailyReport',
             fields: {
-                type: influx.FieldType.STRING,
                 status: influx.FieldType.STRING,
                 description: influx.FieldType.STRING,
                 key: influx.FieldType.STRING,
                 url: influx.FieldType.STRING
             },
             tags: [
+                'type',
                 'username',
                 'name',
                 'team'
@@ -60,7 +60,6 @@ function parseResponse(body){
             series = _.union(series, getItem(timestamp, member, elements));
         }
     })
-    console.log(series);
     influxdb.writeMeasurement('DailyReport', series, { database: 'jira', precision: 'ms' }).then(result => {
         console.log("result :", result);
     }).catch(error => {
@@ -73,13 +72,13 @@ function getItem(timestamp, member, elements) {
     var temp = {
         measurement: 'DailyReport',
         fields: {
-            type: '',
             status: 'InProgress',
             description: '',
             key: '',
             url: ''
         },
         tags: {
+            type: 1,
             username: member.username,
             name: member.name,
             team: member.team
@@ -93,13 +92,13 @@ function getItem(timestamp, member, elements) {
             temp = {
                 measurement: 'DailyReport',
                 fields: {
-                    type: '',
                     status: 'InProgress',
                     description: '',
                     key: '',
                     url: ''
                 },
                 tags: {
+                    type: 1,
                     username: member.username,
                     name: member.name,
                     team: member.team
@@ -108,13 +107,13 @@ function getItem(timestamp, member, elements) {
             }
         }
         if (item.type === 'emoji' && item.name === "rose") {
-            temp.fields.type = "Yesterday";
+            temp.fields.type = 1;
         }
         if (item.type === 'emoji' && item.name === "rocket") {
-            temp.fields.type = "Today";
+            temp.fields.type = 2;
         }
         if (item.type === 'emoji' && item.name === "cactus") {
-            temp.fields.type = "Blocking";
+            temp.fields.type = 3;
         }
         if (item.type === 'link') {
             temp.fields.key = item.text;
