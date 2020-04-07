@@ -9,8 +9,36 @@
         }
     },
     "slack": {
-        "token": "",
+        "token": "xoxp-70099382979-568859256113-1035835974627-4fa989020430ce48cae0a4a7da2362c2",
         "hook": "",
-        "cid": ""
-    }
+        "cid": "CNJGBHN3W",
+        "ts": "1586221202.081500"
+    },
+    "members": [
+        {"username": "hao.le", "team": "dev", "slackId": "UGVPMF265", "name": "Hao Le Van"},
+        {"username": "hoang.nguyen", "team": "dev", "slackId": "UH3A30ACD", "name": "Hoang Nguyen Dang Minh"},
+        {"username": "nhuan.vu", "team": "dev", "slackId": "UH43CA0BZ", "name": "Nhuan Vu Duc"},
+        {"username": "phuong.tran", "team": "dev", "slackId": "UH47J6W4B", "name": "Phuong Tran Nguyen"},
+        {"username": "huy.nguyen", "team": "dev", "slackId": "UH3015C2E", "name": "Huy Nguyen Viet"},
+        {"username": "thuan.ho", "team": "dev", "slackId": "UGSEF7KN3", "name": "Thuan Ho Ngoc"},
+        {"username": "chuong.vo", "team": "dev", "slackId": "UH3ACCSSH", "name": "Chuong Vo Van"},
+        {"username": "lang.le", "team": "dev", "slackId": "UP3KK3XL0", "name": "Lang Le"},
+        {"username": "vu.dang", "team": "dev", "slackId": "UNM6LTV1V", "name": "Vu Dang Nguyen"},
+        {"username": "nhan.phan", "team": "dev", "slackId": "UH4GJUHFY", "name": "Nhan Phan Le Hien"},
+        {"username": "mi.phan", "team": "dev", "slackId": "UUPMEGVKR", "name": "Mi Phan Minh"},
+        {"username": "chuong.nguyen", "team": "dev", "slackId": "UH5D4P1QF", "name": "Chuong Nguyen Van"},
+        {"username": "phong.le", "team": "dev", "slackId": "UM1RH91PF", "name": "Phong Le Thanh"},
+        {"username": "dat.huynh", "team": "dev", "slackId": "UH32Y72UC", "name": "Dat Huynh Ba"},
+        {"username": "hung.phan", "team": "dev", "slackId": "ULUG4V1RN", "name": "Hung Phan Duy"},
+        {"username": "duy.phan", "team": "dev", "slackId": "UGSK598LX", "name": "Duy Phan Nguyen Duc"},
+        
+        {"username": "vinh.tran", "team": "dev", "slackId": "UGQR97J3B", "name": "Vinh Tran Viet"},
+        
+        {"username": "hien.do", "team": "qa", "slackId": "", "name": ""},
+        {"username": "phuong.le", "team": "qa", "slackId": "", "name": ""},
+        {"username": "hoang.dinh", "team": "qa", "slackId": "", "name": ""},
+        {"username": "nghia.huynht", "team": "qa", "slackId": "", "name": ""},
+        {"username": "an.nguyenp", "team": "qa", "slackId": "", "name": ""},
+        {"username": "vi.phantt", "team": "qa", "slackId": "", "name": ""}
+    ]
 }
