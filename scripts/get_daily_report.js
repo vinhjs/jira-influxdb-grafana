@@ -107,13 +107,13 @@ function getItem(timestamp, member, elements) {
             }
         }
         if (item.type === 'emoji' && item.name === "rose") {
-            temp.fields.type = 1;
+            temp.tags.type = 1;
         }
         if (item.type === 'emoji' && item.name === "rocket") {
-            temp.fields.type = 2;
+            temp.tags.type = 2;
         }
         if (item.type === 'emoji' && item.name === "cactus") {
-            temp.fields.type = 3;
+            temp.tags.type = 3;
         }
         if (item.type === 'link') {
             temp.fields.key = item.text;
