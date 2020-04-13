@@ -134,4 +134,4 @@ function getItem(timestamp, member, elements) {
     }
     return rs;
 }
-getDailyReport(TOKEN, process.argv[0] || CHANNEL_ID, THREAD_ID);
+getDailyReport(TOKEN, CHANNEL_ID, process.argv[0] || THREAD_ID);
