@@ -138,7 +138,7 @@ function getItem(timestamp, member, elements) {
 // getDailyReport(TOKEN, CHANNEL_ID, process.argv[2] || THREAD_ID);
 superagent
   .get('https://slack.com/api/conversations.history')
-  .query({ token: TOKEN, channel: CHANNEL_ID, oldest: process.argv[2] || 0, limit: process.argv[3] || 100 }) // query string
+  .query({ token: TOKEN, channel: CHANNEL_ID, latest: process.argv[2] || 'now', limit: process.argv[3] || 100 }) // query string
   .set('accept', 'json')
   .end((err, res) => {
     const body = _.get(res, 'body', null);
