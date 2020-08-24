@@ -136,9 +136,10 @@ function getItem(timestamp, member, elements) {
 }
 //https://slack.com/api/conversations.history?channel=CNJGBHN3W&ts=1586134808.075800&limit=50
 // getDailyReport(TOKEN, CHANNEL_ID, process.argv[2] || THREAD_ID);
+let params = { token: TOKEN, channel: CHANNEL_ID, latest: process.argv[2] || 'now', limit: process.argv[3] || 100 };
 superagent
   .get('https://slack.com/api/conversations.history')
-  .query({ token: TOKEN, channel: CHANNEL_ID, latest: process.argv[2] || 'now', limit: process.argv[3] || 100 }) // query string
+  .query(params) // query string
   .set('accept', 'json')
   .end((err, res) => {
     const body = _.get(res, 'body', null);
@@ -151,7 +152,7 @@ superagent
             }
         })
     } else {
-        console.log("NO RESPONSE");
+        console.log("NO RESPONSE", JSON.stringify(params));
         console.log(body);
     }
   });
