@@ -134,4 +134,23 @@ function getItem(timestamp, member, elements) {
     }
     return rs;
 }
-getDailyReport(TOKEN, CHANNEL_ID, process.argv[2] || THREAD_ID);
+//https://slack.com/api/conversations.history?channel=CNJGBHN3W&ts=1586134808.075800&limit=50
+// getDailyReport(TOKEN, CHANNEL_ID, process.argv[2] || THREAD_ID);
+superagent
+  .get('https://slack.com/api/conversations.history')
+  .query({ token: TOKEN, channel: CHANNEL_ID, oldest: process.argv[2] || 0, limit: process.argv[3] || 100 }) // query string
+  .set('accept', 'json')
+  .end((err, res) => {
+    const body = _.get(res, 'body', null);
+    if (body && body.ok) {
+        let list = _.get(body, 'messages', []);
+        list.forEach(message => {
+            if (message.user === 'USLACKBOT') {
+                getDailyReport(TOKEN, CHANNEL_ID, message.ts);
+            }
+        })
+    } else {
+        console.log("NO RESPONSE");
+        console.log(body);
+    }
+  });
