@@ -146,6 +146,7 @@ superagent
         let list = _.get(body, 'messages', []);
         list.forEach(message => {
             if (message.user === 'USLACKBOT') {
+                console.log(message.ts);
                 getDailyReport(TOKEN, CHANNEL_ID, message.ts);
             }
         })
