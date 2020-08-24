@@ -41,14 +41,14 @@ function getDailyReport(TOKEN, CHANNEL_ID, THREAD_ID) {
   .end((err, res) => {
     const body = _.get(res, 'body', null);
     if (body && body.ok) {
-        parseResponse(body);
+        parseResponse(body, THREAD_ID);
     } else {
         console.log("NO RESPONSE");
         console.log(body);
     }
   });
 }
-function parseResponse(body){
+function parseResponse(body, ts){
     const messages = body.messages || [];
     let series = [];
     messages.forEach(function(msg) {
@@ -61,13 +61,13 @@ function parseResponse(body){
         }
     })
     influxdb.writeMeasurement('DailyReport', series, { database: 'jira', precision: 'ms' }).then(result => {
-        console.log("result :", result);
+        console.log("result :", ts);
     }).catch(error => {
         console.error("Error :", error, "Stack:", error.stack)
     });
 }
 function getItem(timestamp, member, elements) {
-    console.log("getItem", member)
+    // console.log("getItem", member)
     var rs = [];
     var temp = {
         measurement: 'DailyReport',
